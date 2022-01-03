@@ -1,0 +1,18 @@
+.Inputs-form {
+    width: 100%;
+}
+
+.Inputs-radiobtns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#custom {
+    width: 48%;
+}
+
+label[for="custom"] {
+    opacity: 0;
+    height: 0;
+}

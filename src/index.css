@@ -1,5 +1,107 @@
 @import './adjust.css';
 
+/* GLOBAL */
+
+* {
+    font-family: 'Space Mono', monospace;
+}
+
+html {
+    font-size: 62.5%;
+
+    --cyan-primary: hsl(172, 67%, 45%);
+    --cyan1: hsl(186, 100%, 15%);
+    --cyan2: hsl(186, 14%, 43%);
+    --cyan3: hsl(184, 14%, 56%);
+    --cyan4: hsl(185, 41%, 84%);
+    --cyan5: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+body {
+    background-color: var(--cyan4);
+    font-weight: 400;
+    min-height: 100vh;
+    width: 100%;
+}
+
+main {
+    background-color: var(--white);
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+
+input {
+    font-size: 2.4rem;
+}
+
+input {
+    font-weight: 700;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+input[type="text"] {
+    border: none;
+    background-color: var(--cyan5);
+    padding: 1rem 2.5rem 1rem 2.5rem;
+    text-align: right;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+input[type="radio"] {
+    opacity: 0%;
+    width: 0;
+    position: fixed;
+}
+
+.Inputs-radiolabel {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cyan1);
+    width: 48%;
+    height: 5rem;
+    border-radius: 1rem;
+    color: var(--cyan5);
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.Inputs-radiolabel:hover {
+    background-color: hsla(172, 67%, 45%, .7);
+    color: var(--cyan1);
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+    background-color:hsl(172, 67%, 45%);
+    color: var(--cyan1);
+}
+
+input[type="radio"]:focus-visible + label {
+    outline: .1rem solid black;
+}
+
+fieldset {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+}
+
+legend {
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+}
+
 /* UTILITIES */
 
 .visually-hidden {   

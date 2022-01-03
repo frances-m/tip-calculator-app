@@ -1,0 +1,47 @@
+.Result-container {
+    background-color: var(--cyan1);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Result-line {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 4rem;
+}
+
+.Result-title {
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.Result-span {
+    font-size: 1rem;
+    color: var(--cyan3);
+    display: block;
+}
+
+.Result-amounts {
+    font-size: 2.6rem;
+    color: var(--cyan-primary);
+    font-weight: 700;
+}
+
+.Result-resetbtn {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    height: 4rem;
+    border: none;
+    border-radius: .5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: var(--cyan-primary);
+    color: var(--cyan1);
+}
