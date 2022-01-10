@@ -1,5 +1,6 @@
 .Inputs-form {
-    width: 100%;
+    width: 83%;
+    margin: 0 auto;
 }
 
 .Inputs-radiobtns {
@@ -9,10 +10,31 @@
 }
 
 #custom {
-    width: 48%;
+    width: 47%;
+    height: 4.8rem;
+    padding: auto;
 }
 
-label[for="custom"] {
-    opacity: 0;
-    height: 0;
+.Inputs-label {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cyan2);
+    letter-spacing: .06rem;
+}
+
+.Inputs-labelspacer {
+    height: .7rem;
+}
+
+.Inputs-form i {
+    position: relative;
+    left: 1.7rem;
+    top: 1.7rem;
+    z-index: 1;
+    height: 1.7rem;
+}
+
+.Inputs-with-icon {
+    position: relative;
+    top: -1.7rem;
 }

@@ -1,11 +1,45 @@
 .header {
-    height: 12rem;
+    height: 14.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.header__logo {
+    position: relative;
+    top: .5rem;
+}
+
 .main__grid {
-    width: 90%;
     margin: 0 auto;
+}
+
+.attribution {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 0;
+    padding-top: .3rem;
+    text-align: center;
+    color: var(--cyan1);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.attribution a {
+    color: white;
+    background-color: var(--cyan1);
+    padding: .5rem;
+    border-radius: .5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.attribution a:hover {
+    background-color: var(--cyan-primary);
+    color: var(--cyan1);
+}
+
+.attribution__spacer {
+    height: 1.5rem;
 }
