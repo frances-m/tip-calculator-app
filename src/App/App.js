@@ -9,6 +9,7 @@ function App() {
     const [numPeople, setNumPeople] = useState("");
     const [tipAmount, setTipAmount] = useState("0.00");
     const [totalPrice, setTotalPrice] = useState("0.00");
+    const [inputClasses, setInputClasses] = useState("Inputs-with-icon");
 
     const handleUserInput = ({target}) => {
         switch(target.name) {
@@ -70,9 +71,11 @@ function App() {
         switch (target.name) {
           case "bill-total":
             document.getElementById("err-bill-total").style.display = "block";
+            target.style.outline = ".2rem solid hsl(24, 56%, 52%)";
             break;
           case "num-people":
             document.getElementById("err-num-people").style.display = "block";
+            target.style.outline = ".2rem solid hsl(24, 56%, 52%)";
             break;
           default:
             console.log("ERROR at showError");
@@ -84,9 +87,11 @@ function App() {
       switch (target.name) {
         case "bill-total":
           document.getElementById("err-bill-total").style.display = "none";
+          target.style.outline = "auto";
           break;
         case "num-people":
           document.getElementById("err-num-people").style.display = "none";
+          target.style.outline = "auto";
           break;
         default:
           console.log("ERROR at hideError");
@@ -141,6 +146,10 @@ function App() {
           Coded by <a href="#">Frances McKenzie</a>
         </div>
       </main>
+      <div className="attribution-desktop">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="#">Frances McKenzie</a>.
+        </div>
     </div>
   );
 }

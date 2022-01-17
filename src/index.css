@@ -1,4 +1,5 @@
-@import './adjust.css';
+@import './resources/adjust.css';
+@import './resources/media-queries.css';
 
 /* GLOBAL */
 
@@ -29,8 +30,14 @@ main {
     background-color: var(--white);
     border-radius: 3rem 3rem 0 0;
     padding-top: 3.25rem;
+    height: 100%;
 }
 
+.root,
+.App,
+main {
+    min-height: 100vh;
+}
 
 input {
     font-size: 2.4rem;
@@ -139,8 +146,4 @@ legend {
     text-align: end;
     width: fit-content;
     display: none;
-}
-
-.error {
-    outline: .2rem solid hsl(24, 56%, 52%);
 }

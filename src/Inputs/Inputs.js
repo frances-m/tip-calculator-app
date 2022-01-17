@@ -21,6 +21,7 @@ export function Inputs(props) {
                 type="text" 
                 name="bill-total" 
                 placeholder="0" 
+                id="bill-total-input"
             />
             
             <fieldset>
@@ -47,7 +48,7 @@ export function Inputs(props) {
                 <label className="visually-hidden" htmlFor="custom">Custom</label>
             </fieldset>
 
-            <label className="Inputs-label" htmlFor="num-people">Number of People</label>
+            <label className="Inputs-label" id="num-people-label" htmlFor="num-people">Number of People</label>
             <div className="error-container">
                 <p className="error-message" id="err-num-people">Can't be zero</p>
             </div>

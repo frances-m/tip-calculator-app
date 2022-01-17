@@ -43,3 +43,7 @@
 .attribution__spacer {
     height: 1.5rem;
 }
+
+.attribution-desktop {
+    display: none;
+}

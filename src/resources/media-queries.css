@@ -1,0 +1,122 @@
+@media screen and (min-width: 930px) {
+    .root 
+    .App,
+    main {
+        min-height: auto !important;
+    }
+
+    .header {
+        height: 30.3rem !important;
+        padding-bottom: 9.2rem !important;
+        align-items: flex-end !important;
+    }
+
+    main {
+        width: 92.2rem;
+        margin: 0 auto;
+        height: 48.1rem !important;
+        border-radius: 3rem !important;
+        padding-top: 0rem !important;
+    }
+
+    .main__grid {
+        display: flex;
+        justify-content: space-between !important;
+        padding: 0 3.5rem 0 4.75rem;
+        align-items: center;
+        height: 100%;
+    }
+
+    .Inputs-form {
+        margin: 0 !important;
+        padding-right: 0 !important;
+        margin-right: 0 !important;
+        width: 38rem !important;
+        height: 39rem;
+    }
+
+    input[type="text"] {
+        padding-right: 1.7rem !important;
+    }
+
+    input[type="text"]::placeholder {
+        text-indent: -.5rem;
+        overflow: visible;
+    }
+
+    #bill-total-input {
+        margin-bottom: 0.4rem;
+    }
+
+    fieldset {
+        margin-bottom: .9rem;
+    }
+
+    .Inputs-radiolabel {
+        width: 31% !important;
+    }
+
+    #custom {
+        width: 31% !important;
+    }
+
+    .Result-container {
+        position: unset !important;
+        margin: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        width: 41.2rem !important;
+        height: 41.6rem;
+        justify-content: flex-start !important;
+    }
+
+    .Result-line:first-of-type {
+        margin-top: 2rem;
+        padding-top: 3.6rem !important;
+
+    }
+
+    .Result-line {
+        padding-bottom: 2.7rem !important;
+        width: 81% !important;
+    }
+
+    .Result-amounts {
+        font-size: 4.7rem !important;
+        top: -1.55rem !important;
+    }
+
+    .Result-resetbtn {
+        width: 81% !important;
+        margin-top: 7.9rem !important;
+    }
+
+    .attribution {
+        display: none !important;
+    }
+
+    .attribution-desktop {
+        display: block !important;
+    }
+
+    .attribution-desktop {
+        width: 80%;
+        margin: 0 auto;
+        padding: 1rem 0;
+        padding-top: .3rem;
+        text-align: center;
+        color: var(--cyan1);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        letter-spacing: .1rem;
+    }
+    
+    .attribution-desktop a {
+        color: var(--cyan1);
+        padding: .3rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 700;
+    }
+}
