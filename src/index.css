@@ -121,3 +121,26 @@ legend {
     clip-path: inset(50%);
     white-space: nowrap;
 }
+
+.error-container {
+    height: 0;
+    position: relative;
+    top: -2.2rem;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1;
+}
+
+.error-message {
+    color: hsl(24, 56%, 52%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: .06rem;
+    text-align: end;
+    width: fit-content;
+    display: none;
+}
+
+.error {
+    outline: .2rem solid hsl(24, 56%, 52%);
+}

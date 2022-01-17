@@ -1,8 +1,114 @@
 import './App.css';
+import { useEffect, useState } from 'react';
 import { Inputs } from '../Inputs/Inputs';
 import { Result } from '../Result/Result'
 
 function App() {
+    const [billTotal, setBillTotal] = useState("");
+    const [tipPercentage, setTipPercentage] = useState("");
+    const [numPeople, setNumPeople] = useState("");
+    const [tipAmount, setTipAmount] = useState("0.00");
+    const [totalPrice, setTotalPrice] = useState("0.00");
+
+    const handleUserInput = ({target}) => {
+        switch(target.name) {
+            case "bill-total":
+                setBillTotal(target.value);
+                break;
+            case "num-people":
+                setNumPeople(target.value);
+                break;
+            default:
+                console.log("ERROR at handleUserInput -- Input.js 11");
+        }
+    }
+
+    const updateTipPercentage = ({target}) => {
+        const fivePercent = document.getElementById("five");
+        const tenPercent = document.getElementById("ten");
+        const fifteenPercent = document.getElementById("fifteen");
+        const twentyFivePercent = document.getElementById("twenty-five");
+        const fiftyPercent = document.getElementById("fifty");
+        const customPercent = document.getElementById("custom");
+        const radioButtons = [fivePercent, tenPercent, fifteenPercent, twentyFivePercent, fiftyPercent];
+
+        if (target.type === "text") {
+            if (target.value !== "") {
+                target.style.backgroundColor = "hsl(172, 67%, 45%)";
+                target.style.color = "hsl(186, 100%, 15%)";
+            } else {
+                customPercent.style.color = "rgb(118, 118, 118)";
+                customPercent.style.backgroundColor = "hsl(189, 41%, 97%)";
+            }
+            for (let i = 0; i < radioButtons.length; i++) {
+                radioButtons[i].checked = false;
+            }
+        } else {
+            customPercent.style.color = "rgb(118, 118, 118)";
+            customPercent.style.backgroundColor = "hsl(189, 41%, 97%)";
+        }
+
+        setTipPercentage(target.value);
+    }
+
+    const handleTipPercentageClick = (event) => {
+        if (event.target.value !== "") {
+            updateTipPercentage(event);
+        }
+    }
+
+    const resetForm = () => {
+        setBillTotal("");
+        setTipPercentage("");
+        setNumPeople("");
+        setTipAmount("0.00");
+        setTotalPrice("0.00");
+    }
+
+    const showError = ({target}) => {
+      if (target.value === "0" || target.value === "") {
+        switch (target.name) {
+          case "bill-total":
+            document.getElementById("err-bill-total").style.display = "block";
+            break;
+          case "num-people":
+            document.getElementById("err-num-people").style.display = "block";
+            break;
+          default:
+            console.log("ERROR at showError");
+        }
+      }
+    }
+
+    const hideError = ({target}) => {
+      switch (target.name) {
+        case "bill-total":
+          document.getElementById("err-bill-total").style.display = "none";
+          break;
+        case "num-people":
+          document.getElementById("err-num-people").style.display = "none";
+          break;
+        default:
+          console.log("ERROR at hideError");
+      }
+    }
+
+    useEffect(() => {
+      if (billTotal && tipPercentage && numPeople) {
+        const billTotalNum = Number(billTotal);
+        const tipPercentageNum = Number(tipPercentage);
+        const numPeopleNum = Number(numPeople);
+        const calcTipAmount = (billTotalNum * (tipPercentageNum * .01)) / numPeopleNum;
+        const calcTotalPrice = (billTotalNum / numPeopleNum) + calcTipAmount;
+
+        setTipAmount(calcTipAmount.toFixed(2));
+        setTotalPrice(calcTotalPrice.toFixed(2));
+      } else {
+        setTipAmount("0.00");
+        setTotalPrice("0.00");
+      }
+    }, [billTotal, tipPercentage, numPeople]);
+
   return (
     <div className="App">
       <header className="header">
@@ -11,8 +117,23 @@ function App() {
       </header>
       <main className="main">
         <div className="main__grid">
-          <Inputs />
-          <Result />
+          <Inputs
+            billTotal={billTotal}
+            tipPercentage={tipPercentage}
+            numPeople={numPeople}
+            tipAmount={tipAmount}
+            totalPrice={totalPrice}
+            handleUserInput={handleUserInput}
+            updateTipPercentage={updateTipPercentage}
+            handleTipPercentageClick={handleTipPercentageClick}
+            showError={showError}
+            hideError={hideError}
+          />
+          <Result 
+            resetForm={resetForm}
+            tipAmount={tipAmount}
+            totalPrice={totalPrice}
+          />
         </div>
         <div className="attribution">
           Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
