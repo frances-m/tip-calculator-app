@@ -86,11 +86,11 @@ function App() {
       switch (target.name) {
         case "bill-total":
           document.getElementById("err-bill-total").style.display = "none";
-          target.style.outline = "auto";
+          target.style.outline = "none";
           break;
         case "num-people":
           document.getElementById("err-num-people").style.display = "none";
-          target.style.outline = "auto";
+          target.style.outline = "none";
           break;
         default:
           console.log("ERROR at hideError");
